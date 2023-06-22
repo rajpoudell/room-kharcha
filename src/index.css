@@ -25,15 +25,14 @@ body {
 }
 .center--firstline{
   color: white;
-  border: 1px solid red;
   display: flex; 
   gap: 15px;
-  margin:40px 0px 0px 305px;
+  margin:40px 0px 0px 250px;
 }
 #input{
   background-color: rgba(0, 0, 0, 0.792);
   color: white;
-  font-size: 30px;
+  font-size: 16px;
   outline: none;
   border: none;
   border-radius: 10px;
@@ -67,13 +66,27 @@ cursor: pointer;
 
 /* // append ko property start vayo hai ta  */
 .main--appendchild{
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  margin-left: 300px;
+  /* padding: 5px; */
+  display: flex;
+  gap: 100px;
+  margin-left: 230px;
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 14px;
   background-color: black;
   color: white;
   border-radius: 10px;
 
+}
+
+#delete{
+  color: red;
+  cursor: pointer !important;
+}
+#delete:hover{
+  color: rgba(255, 0, 0, 0.726);
+
+}
+.miti{
+  font-size: 10px;
+  margin-top:21px;
 }
