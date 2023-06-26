@@ -9,6 +9,8 @@ const App = () => {
   const [allItems, setAllItems] = useState([]);
   const [product, setProduct] = useState("");
   const [paisa, setPaisa] = useState("");
+  
+  
 
   const handleAddItem = () => {
     const newItem = {
