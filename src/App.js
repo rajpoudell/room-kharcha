@@ -32,15 +32,13 @@ const App = () => {
       setPaisa("");
       console.log(updatedItems);
     }
-  };
+  }; //end of add item function
   
   const handleDeleteItem = (index) => {
     const updatedItems = [...allItems];
     updatedItems.splice(index, 1);
     setAllItems(updatedItems);
   };
-//all code for total kharcha into page
-
 
 
   return(
