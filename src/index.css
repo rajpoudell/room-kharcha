@@ -5,23 +5,33 @@ body {
 
   list-style: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 .main{
-  background-color: #C28F8F;
+  /* background-color: #C28F8F; */
   width: 100%;
   height: 100vh;
   display: flex;
   text-align: center;
   align-items: center;
+  background-image: url(./galaxy.jpg);
 
 }
 .main--innerblock{
-  background-color: #926C75;
+  background-color: #484445;
   width: 80%;
   height: 80vh;
   margin: 0 auto;
   display: flex;
-  border-radius: 10px;
+  border-radius: 20px;
 
 }
 .center--firstline{
