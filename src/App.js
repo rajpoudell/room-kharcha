@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./index.css";
+import "./responsive.css";
 
 const App = () => {
   const currentDate = new Date();
