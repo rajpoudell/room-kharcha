@@ -2,41 +2,45 @@ import React, { useEffect, useState } from 'react';
 import "./index.css";
 
 const App = () => {
-  var inputs1 = document.getElementById("input1")
-  var inputs2 = document.getElementById("input2")
   const currentDate = new Date();
   const currentTime = currentDate.toLocaleTimeString();
   const currentDateString = currentDate.toDateString();
 
-  const [allItems, setAllItems] = useState([]);
+
+
   const [product, setProduct] = useState("");
   const [paisa, setPaisa] = useState("");
-
+  const [allItems, setAllItems] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  
   const handleAddItem = () => {
-    const newItem = {
-      product: product,
-      paisa: paisa
-    };
-    if (inputs1.value==="" && inputs2.value==="" ) {
-      alert("Empty Inputs")
-    }
-    else{
-
-      setAllItems([...allItems, newItem]);
+    if (product === "" || paisa === "") {
+      alert("Empty Inputs");
+    } else {
+      const newItem = {
+        product: product,
+        paisa: paisa
+      };
+  
+      const updatedItems = [...allItems, newItem];
+      setAllItems(updatedItems);
+  
+      const totalPrice = updatedItems.reduce((acc, item) => acc + parseInt(item.paisa), 0);
+      setTotalPrice(totalPrice);
+  
       setProduct("");
       setPaisa("");
-      console.log(allItems)
+      console.log(updatedItems);
     }
-    
   };
+  
   const handleDeleteItem = (index) => {
     const updatedItems = [...allItems];
     updatedItems.splice(index, 1);
     setAllItems(updatedItems);
   };
 //all code for total kharcha into page
-const paisaArray = Object.entries(allItems);
-console.log(paisaArray);
+
 
 
   return(
@@ -65,7 +69,7 @@ console.log(paisaArray);
             <button id='btn' onClick={handleAddItem}>Add</button>
             <div className="center--showkharcha">
               <p>Total Kharcha</p>
-              <p></p>
+              <p>{totalPrice}</p>
             </div>
           </div>
           {allItems.length !== 0 && allItems.map((data, i) => {
