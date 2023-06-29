@@ -26,8 +26,8 @@ const App = () => {
       const updatedItems = [...allItems, newItem];
       setAllItems(updatedItems);
   
-      const totalPrice = updatedItems.reduce((acc, item) => acc + parseInt(item.paisa), 0);
-      setTotalPrice(totalPrice);
+      const totalPrice = updatedItems.reduce((acc, item) => acc + parseInt(item.paisa), 0); // here acc == 0 & item is items
+      setTotalPrice(totalPrice); 
   
       setProduct("");
       setPaisa("");
