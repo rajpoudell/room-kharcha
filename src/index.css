@@ -2,8 +2,12 @@ body {
   margin: 0;
   font-family: sans-serif;
   padding: 0px;
-
+  
   list-style: none;
+}
+*{
+  border: 1px solid red;
+  overflow: hidden;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
