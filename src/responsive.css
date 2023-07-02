@@ -1,13 +1,16 @@
 @media only screen and (max-width: 700px) {
     .inputs{
-        font-size: 14px;
+        font-size: 24px;
+        
     }
     .center--firstline{
-        color: white;
-        display: flex;
         gap: 5px;
-        margin: 10px 0;
+        margin: 10px auto;
+        flex-wrap: wrap;
       
+    }
+    input::placeholder{
+        font-size: 10px;
     }
     #btn{
         font-size: 14px;
