@@ -14,6 +14,7 @@ const App = () => {
   const [allItems, setAllItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   
+
   const handleAddItem = () => {
     if (product === "" || paisa === "") {
       alert("Empty Inputs");
@@ -22,25 +23,29 @@ const App = () => {
         product: product,
         paisa: paisa
       };
-  
+
       const updatedItems = [...allItems, newItem];
       setAllItems(updatedItems);
-  
-      const totalPrice = updatedItems.reduce((acc, item) => acc + parseInt(item.paisa), 0); // here acc == 0 & item is items
-      setTotalPrice(totalPrice); 
-  
+
+      const newTotalPrice = updatedItems.reduce((acc, item) => acc + parseInt(item.paisa), 0);
+      setTotalPrice(newTotalPrice);
+
       setProduct("");
       setPaisa("");
       console.log(updatedItems);
     }
-  }; //end of add item function
-  
-  const handleDeleteItem = (index) => {
-    const updatedItems = [...allItems];
-    updatedItems.splice(index, 1);
-    setAllItems(updatedItems);
   };
 
+  const handleDeleteItem = (index) => {
+    const updatedItems = [...allItems];
+    const deletedItem = updatedItems.splice(index, 1)[0];
+
+    // Update total price by subtracting the paisa of the deleted item
+    const newTotalPrice = totalPrice - parseInt(deletedItem.paisa);
+    setTotalPrice(newTotalPrice);
+
+    setAllItems(updatedItems);
+  };
 
   return(
     <div className='main'>
