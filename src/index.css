@@ -26,8 +26,7 @@ input[type=number] {
   display: flex;
   text-align: center;
   align-items: center;
-  background-image: url(./galaxy.jpg);
-  background-position: center;
+  background-color: #2f1212;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -86,18 +85,21 @@ cursor: pointer;
 }
 
 /* // append ko property start vayo hai ta  */
-.main--appendchild{
-  /* padding: 5px; */
+.main--appendchild {
   display: flex;
-  gap: 100px;
-  margin-left: 230px;
+  gap: 20px;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Center the items vertically */
   margin-top: 20px;
   font-size: 14px;
   background-color: black;
   color: white;
   border-radius: 10px;
-
+  padding: 10px; /* Add padding to make it visually more appealing */
+  max-width: 90%; /* Limit maximum width for responsiveness */
+  margin: 0 auto; /* Center the container horizontally */
 }
+
 
 #delete{
   color: red;
