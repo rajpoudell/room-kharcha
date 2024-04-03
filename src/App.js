@@ -79,7 +79,7 @@ const App = () => {
           {allItems.length !== 0 && allItems.map((data, i) => {
             return (
               <div className="main--appendchild" key={i}>
-                <p>*</p>
+                <p>-</p>
                 <p>{data.product}</p>
                 <p>Rs.{data.paisa}</p>
                 <p className='miti'>{currentTime + currentDateString} </p>
